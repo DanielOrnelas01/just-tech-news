@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// GET /api/users/1
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -33,6 +34,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// POST /api/users
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -47,6 +49,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// PUT /api/users/1
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
@@ -69,6 +72,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// DELETE /api/users/1
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
